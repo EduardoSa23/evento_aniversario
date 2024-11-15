@@ -1,0 +1,31 @@
+@use 'variaveis';
+
+.button {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+
+    &--primary {
+        color: variaveis.$secondaryTextColor;
+        background-color: variaveis.$fundoBotao;
+
+        &:hover {
+            background-color: lighten(variaveis.$fundoBotao, 3%);
+        }
+    }
+
+    @media (max-width:640px) {
+        display: block;
+        width: 100%;
+        justify-content: center;
+    }
+
+    @media (max-width: 1024px) {
+        display: flex;
+        align-items: center;
+    }
+}

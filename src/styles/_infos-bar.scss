@@ -1,0 +1,60 @@
+@use 'variaveis';
+
+.infos__bar {
+    padding: 16px 24px;
+    background-color: variaveis.$textColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    &__infos {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        list-style: none;
+
+        &__item {
+            font-size: 14px;
+            color: variaveis.$secondaryTextColor;
+            padding-right: 24px;
+
+            &:not(:last-child) {
+                border-right: 1px solid variaveis.$fundoBotao;
+            }
+
+            b {
+                font-size: 18px;
+                display: block;
+                color: variaveis.$secondaryTextColor;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__infos {
+            gap: 24px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+
+        &__infos {
+            display: block;
+
+            &__item {
+                margin-bottom: 16px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid variaveis.$fundoBotao;
+                border-right: none !important;
+            }
+        }
+    }
+}
